@@ -1,0 +1,362 @@
+/*
+ * nature.css_t
+ * ~~~~~~~~~~~~
+ *
+ * Sphinx stylesheet -- nature theme.
+ *
+ * :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
+ * :license: BSD, see LICENSE for details.
+ *
+ */
+ 
+@import url("basic.css");
+ 
+/* -- page layout ----------------------------------------------------------- */
+ 
+body {
+    font-family: "Helvetica Neue", Helvetica, "microsoft yahei", Arial, sans-serif;
+    font-size: 100%;
+    background-color: #f5f5f5;
+    color: #555;
+    margin: 0;
+    padding: 0;
+}
+
+div.documentwrapper {
+    float: left;
+    width: 100%;
+}
+
+div.bodywrapper {
+    margin: 0 0 0 260px;
+}
+
+hr {
+    border: 1px solid #B1B4B6;
+}
+ 
+div.document {
+    background-color: #f5f5f5;
+}
+ 
+div.body {
+    color: #3E4349;
+    padding: 30px 30px 30px 30px;
+    font-size: 0.9em;
+}
+ 
+div.footer {
+    color: #555;
+    width: 100%;
+    padding: 13px 0;
+    text-align: center;
+    font-size: 75%;
+}
+ 
+div.footer a {
+    color: #444;
+    text-decoration: underline;
+}
+ 
+div.related {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    text-shadow: 0px 1px 0 #444;
+    font-size: 0.9em;
+
+    background-color: #252525;
+    box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 2px 0px 4px rgba(0,0,0,0.5);
+    -o-box-shadow: 2px 0px 4px rgba(0,0,0,0.5);
+}
+ 
+div.related a {
+    color: #E2F3CC;
+}
+
+.toptitle {
+    float: left;
+    margin-left: 10px;
+    padding-right: 0;
+    padding-left: 58px;
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    color: #eee !important;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+    background: url(hjlogo.png) no-repeat 0 10px;
+}
+.toptitle:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navlist{
+    list-style: none;
+    margin-left: 265px !important;
+}
+
+.navlist > li {
+    float: left;
+    display: block;
+}
+
+.navlist > li > a {
+  display: block;
+  height: 60px;
+  color: #ccc;
+  padding: 0 15px 0 15px;
+}
+
+.navlist > li > a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.body .section:first-child, div.sphinxsidebarwrapper{
+    background-color: white;
+    border: 1px solid #DADADA;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #333;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.075);
+}
+
+.body .section blockquote {
+    border-left: 4px solid #DDD;
+    padding: 0 15px;
+    color: #777;
+}
+ 
+div.sphinxsidebar {
+    width: 260px;
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
+div.sphinxsidebarwrapper{
+    margin: 30px 0 0 30px;
+    padding: 0;
+}
+ 
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+    color: #333;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    padding: 8px 10px;
+    background-color: #f5f5f5;
+    text-shadow: 1px 1px 0 #fff;
+    -moz-box-shadow: inset 0 -1px 0 #fff;
+    -webkit-box-shadow: inset 0 -1px 0 #fff;
+    box-shadow: inset 0 -1px 0 #fff;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+}
+
+div.sphinxsidebar h4:first-child{
+    border-top: 0;
+    border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+}
+
+div.sphinxsidebar h4:first-child a:hover{
+    text-decoration: none;
+}
+ 
+div.sphinxsidebar h3 a {
+    color: #444;
+}
+ 
+ 
+div.sphinxsidebar p {
+    color: #888;
+    padding: 5px 20px;
+}
+ 
+div.sphinxsidebar p.topless {
+}
+ 
+div.sphinxsidebar ul {
+    padding: 0;
+    margin: 0;
+    color: #000;
+}
+
+div.sphinxsidebar ul ul {
+    margin: 0;
+    list-style: none;
+}
+ 
+div.sphinxsidebar a {
+    color: #444;
+}
+
+div.sphinxsidebarwrapper li a {
+    display: block;
+    padding: 8px 0 8px 10px;
+    border-bottom: 1px dotted #DBDBDB;
+}
+
+div.sphinxsidebarwrapper li.toctree-l1:last-child a {
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+    border-bottom: 0;
+}
+
+div.sphinxsidebarwrapper li a:hover {
+    background: #f7f7f7;
+    text-decoration: none;
+}
+
+div.sphinxsidebarwrapper li a.current {
+    background: #f7f7f7;
+}
+
+div.sphinxsidebarwrapper ul ul li a {
+    padding-left: 25px !important;
+}
+
+div.sphinxsidebarwrapper ul ul ul li a {
+    padding-left: 50px !important;
+}
+ 
+div.sphinxsidebar input {
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+div.sphinxsidebar input[type=text]{
+    margin-left: 20px;
+}
+ 
+/* -- body styles ----------------------------------------------------------- */
+ 
+a {
+    color: #005B81;
+    text-decoration: none;
+}
+ 
+a:hover {
+    color: #E32E00;
+    text-decoration: underline;
+}
+ 
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {    
+    font-weight: normal;
+    color: #212224;
+    margin: 30px 0px 10px 0px;
+    padding: 5px 0 5px 10px;
+    text-shadow: 0px 1px 0 white;
+    border-radius: 6px;
+    webkit-border-radius: 6px;
+    moz-border-radius: 6px;
+}
+ 
+div.body h1 { margin-top: 10px; background-color: #eee; font-size: 150%; padding: 8px 0 8px 10px;}
+div.body h2 { font-size: 135%; }
+div.body h3 { font-size: 120%; }
+div.body h4 { font-size: 110%; }
+div.body h5 { font-size: 100%; }
+div.body h6 { font-size: 100%; }
+ 
+a.headerlink {
+    color: #c60f0f;
+    font-size: 0.8em;
+    padding: 0 4px 0 4px;
+    text-decoration: none;
+}
+ 
+a.headerlink:hover {
+    background-color: #c60f0f;
+    color: white;
+}
+ 
+div.body p, div.body dd, div.body li {
+    line-height: 1.5em;
+}
+ 
+div.admonition p.admonition-title + p {
+    display: inline;
+}
+
+div.highlight{
+    background-color: white;
+}
+
+div.note {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+ 
+div.seealso {
+    background-color: #ffc;
+    border: 1px solid #ff6;
+}
+ 
+div.topic {
+    background-color: #eee;
+}
+ 
+div.warning {
+    background-color: #ffe4e4;
+    border: 1px solid #f66;
+}
+ 
+p.admonition-title {
+    display: inline;
+}
+ 
+p.admonition-title:after {
+    content: ":";
+}
+ 
+pre {
+    font-family: Monaco, Courier New, Consolas;
+    padding: 10px;
+    background-color: #f7f7f7;
+    color: #222;
+    line-height: 1.2em;
+    border: 1px solid #C6C9CB;
+    font-size: 1em;
+    margin: 0;
+    -webkit-box-shadow: 1px 1px 1px #d8d8d8;
+    -moz-box-shadow: 1px 1px 1px #d8d8d8;
+}
+ 
+tt {
+    background-color: #ecf0f3;
+    color: #222;
+    /* padding: 1px 2px; */
+    font-size: 1.1em;
+}
+
+.viewcode-back {
+    font-family: Arial, sans-serif;
+}
+
+div.viewcode-block:target {
+    background-color: #f4debf;
+    border-top: 1px solid #ac9;
+    border-bottom: 1px solid #ac9;
+}

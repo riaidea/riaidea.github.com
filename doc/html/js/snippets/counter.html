@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web前端资源库</title>
+    
+    <link rel="stylesheet" href="../../_static/hj.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script> 
+  </head>
+  <body>
+
+
+<div class="related">
+    <a class="toptitle" href="../../index.html">Web前端资源库</a>
+  <ul class="navlist">
+    <li>
+      <a href="../../index.html" title="首页"
+         >首页</a>
+    </li>
+    <li>
+      <a href="../../tutorials/best-practice/index.html" title="最佳编码实践"
+         >最佳编码实践</a>
+    </li>
+    <li>
+      <a href="../../html/index.html" title="HTML &amp; CSS"
+         >HTML & CSS</a>
+    </li>
+    <li>
+      <a href="../index.html" title="JavaScript"
+         >JavaScript</a>
+    </li> 
+  </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>统计代码<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">Counter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">webclick</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">track</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">word</span><span class="p">){</span>
+            <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">Cookie</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;ClubAuth&quot;</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">&quot;key=&quot;</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="s2">&quot;&amp;refe=&quot;</span> <span class="o">+</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">word</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&amp;random=&quot;</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">img</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+                <span class="nx">img</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+                    <span class="nx">img</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nx">img</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">&quot;http://webclick.yeshj.com/clickgather.ashx?counter=dict_huaci&amp;&quot;</span> <span class="o">+</span> <span class="nx">data</span><span class="p">;</span>
+            <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="nx">ga</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//TODO: async bug</span>
+        <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="kd">var</span> <span class="nx">gaq</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">_gaq</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">_gaq</span> <span class="o">||</span> <span class="p">{};</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">gaq</span><span class="p">.</span><span class="nx">_getAsyncTracker</span><span class="p">){</span>
+                <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+                <span class="nx">ga</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span>
+                <span class="nx">ga</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="nx">ga</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https:&#39;</span> <span class="o">==</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s1">&#39;https://ssl&#39;</span> <span class="o">:</span> <span class="s1">&#39;http://www&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.google-analytics.com/ga.js&#39;</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">ga</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="nx">gaq</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="nx">account</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">push</span><span class="p">([</span><span class="s2">&quot;dt._setAccount&quot;</span><span class="p">,</span> <span class="nx">id</span><span class="p">]);</span>
+        <span class="p">},</span>
+        <span class="nx">track</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">category</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">label</span><span class="p">,</span> <span class="nx">value</span><span class="p">){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;dt._trackEvent&#39;</span><span class="p">,</span> <span class="nx">category</span><span class="p">,</span> <span class="nx">action</span><span class="p">,</span> <span class="nx">label</span><span class="p">,</span> <span class="nx">value</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+<h4><a href="../../index.html">所有内容</a></h4>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML &amp; CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">JavaScript代码片段</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">统计代码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flash.html">Flash插入代码</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hjdict.html">小d划词使用说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">教程文档</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, HuJiang.com.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
