@@ -1,1 +1,1 @@
-hj-frontend.github.com
+riaidea.github.com
